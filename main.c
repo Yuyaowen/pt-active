@@ -7,7 +7,7 @@
 #include "pelco_d.h"
 #include "uart.h"
 
-#define CAM_ADDR    1
+#define CAM_ADDR    255
 
 void help(char *proc)
 {
@@ -66,7 +66,7 @@ int main(int argc, char **argv)
         }
     }
 
-    fd = init_uart("/dev/ttyUSB0", 9600);
+    fd = init_uart("/dev/ttyUSB0", 2400);
     if (fd < 0) {
         goto err_init;
     }
